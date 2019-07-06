@@ -1,0 +1,62 @@
+{
+  "name": "newsapp",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mrholek/CoreUI-React.git"
+  },
+  "dependencies": {
+    "@coreui/coreui": "^2.0.0-beta.6",
+    "@coreui/react": "^2.0.0-beta",
+    "babel-jest": "^22.4.3",
+    "bootstrap": "4.0.0",
+    "chart.js": "^2.7.2",
+    "classnames": "^2.2.3",
+    "crypto-js": "^3.1.9-1",
+    "flag-icon-css": "^3.0.0",
+    "font-awesome": "^4.7.0",
+    "latest-version": "^4.0.0",
+    "node-sass-chokidar": "^1.2.2",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.1",
+    "react-bootstrap-table": "^4.3.1",
+    "react-chartjs-2": "^2.7.0",
+    "react-dom": "^16.3.1",
+    "react-redux": "^5.0.7",
+    "react-router-config": "^1.0.0-beta.4",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "^1.1.4",
+    "reactstrap": "^5.0.0",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "simple-line-icons": "^2.4.1",
+    "universal-cookie": "^3.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "riek": "^1.1.0"
+  }
+}
