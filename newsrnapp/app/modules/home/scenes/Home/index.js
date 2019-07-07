@@ -1,28 +1,38 @@
 import React from 'react';
 import {FlatList, RefreshControl, ActivityIndicator} from 'react-native';
+import 'abortcontroller-polyfill';
 
 import {connect} from 'react-redux';
 
 import NewsItem from "../../components/NewsItem"
 
-import {actions as home} from "../../index"
+import {actions as home} from "../../index";
 const { getNewsHeadlines } = home;
 
 class Home extends React.Component {
+  _isMounted = false;
+
   constructor() {
     super();
     this.state = {
       refreshing: false
     }
-  }
+    const AbortController = window.AbortController;
+    this.controller = new AbortController();
+    this.signal = this.controller.signal;
+  };
 
   componentDidMount() {
+    this._isMounted = true;
     this.getNewsHeadlines(false)
+  }
+  componentWillUnmount() {
+    this.controller.abort();
   }
 
   getNewsHeadlines = (refreshing = true) => {
     this.setState({refreshing});
-    this.props.getNewsHeadlines("in")
+    this.props.getNewsHeadlines(this.props.area)
       .finally(() => this.setState({refreshing: false}));
   }
 
@@ -31,6 +41,7 @@ class Home extends React.Component {
   }
 
   render() {
+
     const {articles, isFetching, hasError,errorMsg} = this.props;
 
     if (isFetching) return <ActivityIndicator/>
@@ -50,7 +61,8 @@ class Home extends React.Component {
               refreshing={this.state.refreshing}
               onRefresh={this.getNewsHeadlines}
             />
-          }/>
+          }
+        />
       );
     }
   }

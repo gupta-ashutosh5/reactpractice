@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View, TouchableHighlight, Image} from 'react-native';
 import moment from "moment";
 
-import {Actions} from 'react-native-router-flux'
+import {Actions} from 'react-native-router-flux';
 
 import styles from "./styles"
 
